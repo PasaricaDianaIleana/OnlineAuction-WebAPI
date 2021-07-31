@@ -1,0 +1,15 @@
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\bin\Debug\net5.0\DataLibrary.deps.json
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\bin\Debug\net5.0\DataLibrary.runtimeconfig.json
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\bin\Debug\net5.0\DataLibrary.runtimeconfig.dev.json
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\bin\Debug\net5.0\DataLibrary.dll
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\bin\Debug\net5.0\ref\DataLibrary.dll
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\bin\Debug\net5.0\DataLibrary.pdb
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\obj\Debug\net5.0\DataLibrary.csproj.AssemblyReference.cache
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\obj\Debug\net5.0\DataLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\obj\Debug\net5.0\DataLibrary.AssemblyInfoInputs.cache
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\obj\Debug\net5.0\DataLibrary.AssemblyInfo.cs
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\obj\Debug\net5.0\DataLibrary.csproj.CoreCompileInputs.cache
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\obj\Debug\net5.0\DataLibrary.dll
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\obj\Debug\net5.0\ref\DataLibrary.dll
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\obj\Debug\net5.0\DataLibrary.pdb
+C:\Users\pasar\Desktop\AuctionWebApi\DataLibrary\obj\Debug\net5.0\DataLibrary.genruntimeconfig.cache
