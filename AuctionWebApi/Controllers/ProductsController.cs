@@ -38,7 +38,7 @@ namespace AuctionWebApi.Controllers
                     Price=prod.Price,
                     CategoryId=prod.CategoryId,
                     CreatedDate=prod.CreatedDate,
-                    ImageUrl=String.Format("{0}/{1}", "https://localhost:44300/api/Products/image/",prod.ProductId),
+                    ImageUrl=String.Format("{0}/{1}", "https://localhost:44300/api/Products/image",prod.ProductId),
                     InProcess=prod.InProcess
                 }).ToList();
             return products;

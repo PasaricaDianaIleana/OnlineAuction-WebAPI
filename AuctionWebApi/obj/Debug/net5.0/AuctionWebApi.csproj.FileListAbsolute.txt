@@ -163,7 +163,6 @@ C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\
 C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -202,3 +201,8 @@ C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\obj\Debug\net5.0\
 C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\obj\Debug\net5.0\ref\AuctionWebApi.dll
 C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\obj\Debug\net5.0\AuctionWebApi.pdb
 C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\obj\Debug\net5.0\AuctionWebApi.genruntimeconfig.cache
+C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\AuctionWebApi.StaticWebAssets.xml
+C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\pasar\Desktop\proj\OnlineAuction-WebAPI\AuctionWebApi\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
