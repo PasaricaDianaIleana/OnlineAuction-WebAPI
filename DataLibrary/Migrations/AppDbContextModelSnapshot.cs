@@ -37,6 +37,8 @@ namespace DataLibrary.Migrations
 
                     b.HasKey("BidId");
 
+                    b.HasIndex("ProductId");
+
                     b.ToTable("Bids");
                 });
 
@@ -85,11 +87,17 @@ namespace DataLibrary.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<string>("CreatedDate")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("InProcess")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -322,6 +330,15 @@ namespace DataLibrary.Migrations
                     b.HasDiscriminator().HasValue("Users");
                 });
 
+            modelBuilder.Entity("DataLibrary.Models.Bid", b =>
+                {
+                    b.HasOne("DataLibrary.Models.Product", null)
+                        .WithMany("Bids")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("DataLibrary.Models.Contact", b =>
                 {
                     b.HasOne("DataLibrary.Models.Users", "Users")
@@ -394,6 +411,11 @@ namespace DataLibrary.Migrations
             modelBuilder.Entity("DataLibrary.Models.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("DataLibrary.Models.Product", b =>
+                {
+                    b.Navigation("Bids");
                 });
 #pragma warning restore 612, 618
         }

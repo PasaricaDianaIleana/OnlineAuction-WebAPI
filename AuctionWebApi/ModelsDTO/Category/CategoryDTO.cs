@@ -13,5 +13,6 @@ namespace AuctionWebApi.ModelsDTO
         [Required]
         public string Name { get; set; }
 
+
     }
 }

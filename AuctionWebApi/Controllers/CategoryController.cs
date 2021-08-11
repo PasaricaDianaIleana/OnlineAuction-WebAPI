@@ -24,12 +24,12 @@ namespace AuctionWebApi.Controllers
         [HttpGet]
         public async Task<IList<CategoryDTO>> GetCategoriesAsync()
         {
-            var data =(await _repo.GetAllAsync())
+            var data = (await _repo.GetAllAsync())
                 .Select(category => new CategoryDTO
-            {
-                CategoryId = category.CategoryId,
-                Name=category.CategoryName
-            }).ToList();
+                {
+                    CategoryId = category.CategoryId,
+                    Name = category.CategoryName
+                }).ToList();
             return data;
         }
         [HttpPost]

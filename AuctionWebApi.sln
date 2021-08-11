@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionWebApi", "AuctionWebApi\AuctionWebApi.csproj", "{66B81881-96A9-4AC5-9C1B-0DFCDFD1F351}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuctionWebApi", "AuctionWebApi\AuctionWebApi.csproj", "{66B81881-96A9-4AC5-9C1B-0DFCDFD1F351}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{88A8EDA8-CC9A-4667-948C-867C3C745DA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{88A8EDA8-CC9A-4667-948C-867C3C745DA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

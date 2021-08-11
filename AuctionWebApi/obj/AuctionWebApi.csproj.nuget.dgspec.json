@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\AuctionWebApi\\AuctionWebApi.csproj": {}
+    "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\AuctionWebApi\\AuctionWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\AuctionWebApi\\AuctionWebApi.csproj": {
+    "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\AuctionWebApi\\AuctionWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\AuctionWebApi\\AuctionWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\AuctionWebApi\\AuctionWebApi.csproj",
         "projectName": "AuctionWebApi",
-        "projectPath": "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\AuctionWebApi\\AuctionWebApi.csproj",
+        "projectPath": "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\AuctionWebApi\\AuctionWebApi.csproj",
         "packagesPath": "C:\\Users\\pasar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\AuctionWebApi\\obj\\",
+        "outputPath": "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\AuctionWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -33,8 +33,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\DataLibrary\\DataLibrary.csproj": {
-                "projectPath": "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\DataLibrary\\DataLibrary.csproj"
+              "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\DataLibrary\\DataLibrary.csproj": {
+                "projectPath": "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\DataLibrary\\DataLibrary.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\DataLibrary\\DataLibrary.csproj": {
+    "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\DataLibrary\\DataLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\DataLibrary\\DataLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\DataLibrary\\DataLibrary.csproj",
         "projectName": "DataLibrary",
-        "projectPath": "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\DataLibrary\\DataLibrary.csproj",
+        "projectPath": "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\DataLibrary\\DataLibrary.csproj",
         "packagesPath": "C:\\Users\\pasar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pasar\\Desktop\\AuctionWebApi\\DataLibrary\\obj\\",
+        "outputPath": "C:\\Users\\pasar\\Desktop\\proj\\OnlineAuction-WebAPI\\DataLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

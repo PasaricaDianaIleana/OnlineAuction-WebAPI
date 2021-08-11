@@ -11,7 +11,6 @@ namespace DataLibrary.Models
         public int BidId { get; set; }
         public int Price { get; set; }
         public int ProductId { get; set; }
-
         public string UserId { get; set; }
 
     }

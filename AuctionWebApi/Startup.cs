@@ -1,3 +1,4 @@
+using DataLibrary.DataRepository;
 using DataLibrary.Models;
 using DataLibrary.Repository;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +33,7 @@ namespace AuctionWebApi
             services.AddDbContext<AppDbContext>
                 (option => option.UseSqlServer(Configuration.GetConnectionString("AppConnectionString")));
             services.AddScoped<ICategory, CategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddControllers(options=> {
                 options.SuppressAsyncSuffixInActionNames = false;
             });

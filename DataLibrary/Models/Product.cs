@@ -17,7 +17,10 @@ namespace DataLibrary.Models
         public int Price { get; set; }
         public string Description { get; set; }
         public int CategoryId { get; set; }
-       
+       public bool InProcess { get; set; }
         public string UserId { get; set; }
+
+        public ICollection<Bid> Bids { get; set; }
+        public string CreatedDate { get; set; }
     }
 }
