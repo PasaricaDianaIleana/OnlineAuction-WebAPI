@@ -12,7 +12,7 @@ namespace DataLibrary.Repository
        Task<IList<Product>> GetAll();
         Task AddProduct(Product product);
        Task<Product> getProductById(int id);
-
+        int GetBidNumber(int id);
        Task<Product> UpdateProduct(Product product);
         Task DeleteProduct(int id);
         Task<Product> EditProduct(Product product);

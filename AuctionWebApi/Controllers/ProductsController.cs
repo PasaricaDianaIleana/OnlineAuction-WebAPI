@@ -29,17 +29,20 @@ namespace AuctionWebApi.Controllers
        [HttpGet]
        public async Task<IList<ProductDTO>> GetProductsAsync()
         {
+
             var products = (await _repo.GetAll())
                 .Select(prod => new ProductDTO
                 {
-                    ProductId=prod.ProductId,
-                    Description=prod.Description,
-                    Name=prod.Name,
-                    Price=prod.Price,
-                    CategoryId=prod.CategoryId,
-                    CreatedDate=prod.CreatedDate,
-                    ImageUrl=String.Format("{0}/{1}", "https://localhost:44300/api/Products/image",prod.ProductId),
-                    InProcess=prod.InProcess
+                    ProductId = prod.ProductId,
+                    Description = prod.Description,
+                    Name = prod.Name,
+                    Price = prod.Price,
+                    CategoryName=prod.Category.CategoryName,
+                    CategoryId = prod.Category.CategoryId,
+                    CreatedDate = prod.CreatedDate,
+                    ImageUrl = String.Format("{0}/{1}", "https://localhost:44300/api/Products/image", prod.ProductId),
+                    InProcess = prod.InProcess,
+                    BidNr = _repo.GetBidNumber(prod.ProductId)
                 }).ToList();
             return products;
         }
@@ -52,7 +55,7 @@ namespace AuctionWebApi.Controllers
             }
             Product prod = new()
             {
-                CategoryId = product.CategoryId,
+                
                 CreatedDate = product.CreatedDate,
                 Description = product.Description,
                 Price = product.Price,

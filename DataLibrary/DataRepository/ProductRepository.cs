@@ -35,7 +35,7 @@ namespace DataLibrary.DataRepository
             var data = await _context.Products.FirstOrDefaultAsync(p => p.ProductId == product.ProductId);
             if (data != null)
             {
-                data.CategoryId = product.CategoryId;
+                data.Category.CategoryId = product.Category.CategoryId;
                 data.CreatedDate = product.CreatedDate;
                 data.Description = product.Description;
                 data.ImageUrl = product.ImageUrl;
@@ -44,17 +44,22 @@ namespace DataLibrary.DataRepository
                 data.ProductId = product.ProductId;
                 data.UserId = product.UserId;
                 data.InProcess = product.InProcess;
-
                 await _context.SaveChangesAsync();
                 return data;
             }
             return null;
         }
-
+       
         public async Task<IList<Product>> GetAll()
         {
-            return await _context.Products.Include(bid=>bid.Bids).
+            return await _context.Products.Include(bid=>bid.Bids).Include(c=>c.Category).
                 ToListAsync();
+        }
+
+        public int GetBidNumber(int id)
+        {
+          return _context.Bids.Count(d => d.ProductId == id);
+           
         }
 
         public async Task<Product> getProductById(int id)

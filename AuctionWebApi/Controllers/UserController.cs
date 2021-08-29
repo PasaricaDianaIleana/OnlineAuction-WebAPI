@@ -1,10 +1,12 @@
 ﻿using AuctionWebApi.ModelsDTO.User;
 using DataLibrary.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,7 +67,7 @@ namespace AuctionWebApi.Controllers
                 var token = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new Claim[] {
-                        new Claim("UserId", user.Id.ToString())
+                        new Claim("UserId", user.Id)
                     }),
                     Expires = DateTime.UtcNow.AddDays(1),
                     SigningCredentials=new SigningCredentials(
@@ -81,8 +83,23 @@ namespace AuctionWebApi.Controllers
             {
                 return BadRequest(new { message = "Username or password is incorrect" });
             }
-        
-        
+        }
+        [HttpGet]
+        [Route("Profile")]
+        [Authorize]
+        public async Task<Object> GetUserProfile()
+        {
+            string userId = User.Claims.First(id => id.Type == "UserId").Value;
+            var user = await _userManager.FindByIdAsync(userId);
+            return new UserProfileDTO
+            {
+                UserId = user.Id,
+                UserName=user.UserName,
+                Email=user.Email,
+                Phone=user.PhoneNumber,
+                Image=user.ImageUrl
+
+            };
         }
     }
 }
