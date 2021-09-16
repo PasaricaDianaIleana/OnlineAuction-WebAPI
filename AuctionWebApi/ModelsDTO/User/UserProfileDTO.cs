@@ -12,5 +12,7 @@ namespace AuctionWebApi.ModelsDTO.User
         public string UserId { get; set; }
         public string Phone { get; set; }
         public string Image { get; set; }
+        public string Description { get; set; }
+
     }
 }

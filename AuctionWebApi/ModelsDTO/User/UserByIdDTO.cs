@@ -1,16 +1,14 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLibrary.Models
+namespace AuctionWebApi.ModelsDTO.User
 {
-  public  class Users:IdentityUser
+    public class UserByIdDTO
     {
+        public string UserName { get; set; }
         public string ImageUrl { get; set; }
-        public int BidId { get; set; }
         public string Description { get; set; }
 
     }

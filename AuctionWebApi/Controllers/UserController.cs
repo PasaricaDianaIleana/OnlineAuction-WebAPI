@@ -1,11 +1,14 @@
 ﻿using AuctionWebApi.ModelsDTO.User;
 using DataLibrary.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -19,11 +22,13 @@ namespace AuctionWebApi.Controllers
     {
         private readonly UserManager<Users> _userManager;
         private readonly SignInManager<Users> _signInManager;
+        private readonly IHostEnvironment _env;
 
-        public UserController(UserManager<Users> userManager, SignInManager<Users> signInManager)
+        public UserController(UserManager<Users> userManager, SignInManager<Users> signInManager, IHostEnvironment env)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _env = env;
         }
 
         [HttpPost]
@@ -97,8 +102,36 @@ namespace AuctionWebApi.Controllers
                 UserName=user.UserName,
                 Email=user.Email,
                 Phone=user.PhoneNumber,
-                Image=user.ImageUrl
+                Image=user.ImageUrl,
+                Description=user.Description
+               
 
+            };
+        }
+        [HttpPost]
+        [Route("Image/{userId}")]
+        public async Task<ActionResult> PostImage([FromRoute] string userId,[FromForm] IFormFile picture)
+        {
+            var picturePath = Path.Combine(_env.ContentRootPath, "Images", picture.FileName);
+            using (var streamImg=new FileStream(picturePath, FileMode.Create))
+            {
+                picture.CopyTo(streamImg);
+            }
+            var user = await _userManager.FindByIdAsync(userId);
+            user.ImageUrl = picture.FileName;
+            return Ok();
+        }
+        [HttpGet]
+        [Route("{userId}")]
+        
+        public async Task<Object> GetUserById(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            return new UserByIdDTO 
+            { 
+                UserName=user.UserName,
+                Description=user.Description,
+                ImageUrl=user.ImageUrl
             };
         }
     }

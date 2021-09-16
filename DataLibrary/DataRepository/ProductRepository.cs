@@ -24,7 +24,7 @@ namespace DataLibrary.DataRepository
 
         public async Task DeleteProduct(int id)
         {
-            var product =await getProductById(id);
+            var product =await GetProductById(id);
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
 
@@ -62,7 +62,7 @@ namespace DataLibrary.DataRepository
            
         }
 
-        public async Task<Product> getProductById(int id)
+        public async Task<Product> GetProductById(int id)
         {
             return await _context.Products.Where(p => p.ProductId == id).FirstOrDefaultAsync();
             
