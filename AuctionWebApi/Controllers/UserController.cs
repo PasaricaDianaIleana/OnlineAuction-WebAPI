@@ -33,7 +33,7 @@ namespace AuctionWebApi.Controllers
 
         [HttpPost]
         [Route("Register")]
-        public async Task<IActionResult> RegisterUser([FromBody]RegisterUserDTO user)
+        public async Task<IActionResult> RegisterUser([FromBody] RegisterUserDTO user)
         {
             if (ModelState.IsValid)
             {
@@ -56,9 +56,9 @@ namespace AuctionWebApi.Controllers
                 {
                     return BadRequest();
                 }
-          
+
             }
-              return BadRequest();
+            return BadRequest();
         }
         [HttpPost]
         [Route("Login")]
@@ -66,16 +66,16 @@ namespace AuctionWebApi.Controllers
         {
             var user = await _userManager.FindByNameAsync(userLogin.UserName);
             var password = await _userManager.CheckPasswordAsync(user, userLogin.Password);
-              if(user!=null && password)
+            if (user != null && password)
             {
-                
+
                 var token = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new Claim[] {
                         new Claim("UserId", user.Id)
                     }),
                     Expires = DateTime.UtcNow.AddDays(1),
-                    SigningCredentials=new SigningCredentials(
+                    SigningCredentials = new SigningCredentials(
                         new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1234567890123456")),
                         SecurityAlgorithms.HmacSha256Signature)
                 };
@@ -99,27 +99,38 @@ namespace AuctionWebApi.Controllers
             return new UserProfileDTO
             {
                 UserId = user.Id,
-                UserName=user.UserName,
-                Email=user.Email,
-                Phone=user.PhoneNumber,
-                Image=user.ImageUrl,
-                Description=user.Description
-               
+                UserName = user.UserName,
+                Email = user.Email,
+                Phone = user.PhoneNumber,
+                Image = user.ImageUrl,
+                Description = user.Description
+
 
             };
         }
         [HttpPost]
-        [Route("Image/{userId}")]
-        public async Task<ActionResult> PostImage([FromRoute] string userId,[FromForm] IFormFile picture)
+        [Route("image/{userId}")]
+        public async Task<ActionResult> PostImage([FromRoute] string userId, [FromForm] IFormFile picture)
         {
             var picturePath = Path.Combine(_env.ContentRootPath, "Images", picture.FileName);
-            using (var streamImg=new FileStream(picturePath, FileMode.Create))
+            using (var streamImg = new FileStream(picturePath, FileMode.Create))
             {
                 picture.CopyTo(streamImg);
             }
             var user = await _userManager.FindByIdAsync(userId);
             user.ImageUrl = picture.FileName;
+            await _userManager.UpdateAsync(user);
             return Ok();
+        }
+        [HttpGet]
+        [Route("image/{userId}")]
+        public async Task<ActionResult> GetImage([FromRoute] string userId)
+        {
+            var user =await _userManager.FindByIdAsync(userId);
+            var picture = user.ImageUrl;
+            var path = Path.Combine(_env.ContentRootPath, "images", picture);
+            var imageFile = System.IO.File.OpenRead(path);
+            return File(imageFile, "image/jpeg");
         }
         [HttpGet]
         [Route("{userId}")]
@@ -127,11 +138,11 @@ namespace AuctionWebApi.Controllers
         public async Task<Object> GetUserById(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
-            return new UserByIdDTO 
-            { 
-                UserName=user.UserName,
-                Description=user.Description,
-                ImageUrl=user.ImageUrl
+            return new UserByIdDTO
+            {
+                UserName = user.UserName,
+                Description = user.Description,
+                ImageUrl = String.Format("{0}/{1}", "https://localhost:44300/api/User/image", user.Id)
             };
         }
     }
