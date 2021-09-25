@@ -34,7 +34,7 @@ namespace AuctionWebApi
                 (option => option.UseSqlServer(Configuration.GetConnectionString("AppConnectionString")));
             services.AddScoped<ICategory, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
-        
+            services.AddScoped<IBidRepository, BidRepository>();
             services.AddAuthentication(opt =>
             {
 
