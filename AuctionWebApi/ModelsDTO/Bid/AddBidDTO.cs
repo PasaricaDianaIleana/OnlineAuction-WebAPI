@@ -7,7 +7,7 @@ namespace AuctionWebApi.ModelsDTO.Bid
 {
     public class AddBidDTO
     {
-        public int BidId { get; set; }
+       
         public int Price { get; set; }
         public int ProductId { get; set; }
         public string UserId { get; set; }

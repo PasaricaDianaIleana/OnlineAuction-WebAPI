@@ -9,6 +9,8 @@ using DataLibrary.Models;
 
 namespace AuctionWebApi.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class BidController : ControllerBase
     {
         private readonly IBidRepository _repo;
@@ -18,7 +20,7 @@ namespace AuctionWebApi.Controllers
             _repo = repo;
         }
         [HttpGet]
-        [Route("{bidId}")]
+        [Route("{id}")]
         public async Task<ActionResult<GetBidDTO>> GetBidByIdAsync([FromRoute] int id)
         {
             var bid = await _repo.GetBidById(id);

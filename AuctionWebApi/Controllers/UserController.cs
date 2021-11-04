@@ -141,6 +141,7 @@ namespace AuctionWebApi.Controllers
             return new UserByIdDTO
             {
                 UserName = user.UserName,
+                UserId=user.Id,
                 Description = user.Description,
                 ImageUrl = String.Format("{0}/{1}", "https://localhost:44300/api/User/image", user.Id)
             };
